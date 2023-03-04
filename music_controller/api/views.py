@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import generics
+from .serializers import RoomSerializer
+from .models import Room
 
 # render views, api end points (end point = / (paths?))
-def main(request): #request parameter is required when making view
-    #this will return a response (from end point)
-    return HttpResponse("<h1>Hello</h1>")
+
+class RoomView(generics.CreateAPIView):  #CreateAPIView (post), ListAPIView (get)
+    queryset = Room.objects.all()  #what we want to return
+    serializer_class = RoomSerializer #how to convert the data to a format to user them
