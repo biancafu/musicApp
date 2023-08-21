@@ -12,7 +12,7 @@ def generate_unique_code():
 
     while True:
         code = ''.join(random.choices(string.ascii_uppercase, k=length)) #using join cuz random.choices returns an array 
-        if Room.objects.filter(code = code).count() == 0: #Room.objects gives all Room objects
+        if Room.objects.filter(code = code).count() == 0: #Room.objects gives all Room objects, filter by code, see if we find a repeated, this will return a list that matches the criteria 
             break
 
     return code
@@ -25,3 +25,4 @@ class Room(models.Model):
     created_at = models.DateTimeField(auto_now_add=True) #when create a new room, automatic add the time in
 
     #can add methods in class too
+    # def is_host_this(host): ...

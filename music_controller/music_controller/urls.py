@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls')) #send urls (whichever since '') to api
+    path('api/', include('api.urls')), #the api urls will actually be used by react internally #send urls with api/ to api
+    path('', include('frontend.urls')) #this would be use by users #send whichever urls with / to frontend
 ]
