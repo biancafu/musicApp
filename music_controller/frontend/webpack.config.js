@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./static/frontend"), //output file path
     filename: "[name].js", //with this name
+    sourceMapFilename: "[name].js.map"
   },
   module: {
     rules: [
@@ -31,4 +32,5 @@ module.exports = {
       },
     }),
   ],
+  devtool: "source-map",
 };
