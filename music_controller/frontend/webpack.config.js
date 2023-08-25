@@ -1,14 +1,11 @@
-//bundle all js code to 1 file
-
 const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js", //relative path
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "./static/frontend"), //output file path
-    filename: "[name].js", //with this name
-    sourceMapFilename: "[name].js.map"
+    path: path.resolve(__dirname, "./static/frontend"),
+    filename: "[name].js",
   },
   module: {
     rules: [
@@ -24,7 +21,7 @@ module.exports = {
   optimization: {
     minimize: true,
   },
-  plugins: [ //optimization
+  plugins: [
     new webpack.DefinePlugin({
       "process.env": {
         // This has effect on the react lib size
@@ -32,5 +29,4 @@ module.exports = {
       },
     }),
   ],
-  devtool: "source-map",
 };
