@@ -1,7 +1,7 @@
 """music_controller URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+    https://docs.djangoproject.com/en/3.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -18,6 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls')), #the api urls will actually be used by react internally #send urls with api/ to api
-    path('', include('frontend.urls')) #this would be use by users #send whichever urls with / to frontend
+    path('api/', include('api.urls')),
+    path('', include('frontend.urls'))
 ]
